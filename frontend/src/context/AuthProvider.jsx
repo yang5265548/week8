@@ -18,10 +18,11 @@ export default function AuthProvider({ children }) {
     }, []);
 
     function setUser(userData) {
+        console.log("data shi sha:", userData);
         setIsAuthenticated(true);
         setToken(userData.token);
         setEmail(userData.email);
-        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("user", JSON.stringify(userData));
     }
 
     function clearUser() {
