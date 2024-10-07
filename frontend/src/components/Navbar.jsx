@@ -26,15 +26,18 @@ const Navbar = () => {
         <h1>React Jobs</h1>
       </Link>
       <div className="links">
+        {isAuthenticated ? (
         <div>
           <Link to="/jobs/add-job">Add Job</Link>
-          {/* {email && <span>{email}</span>} */}
+          {email && <span>{email}</span>}
           <button onClick={handleClick}>Log out</button>
         </div>
+        ) : (
         <div>
           <Link to="/login">Login</Link>
           <Link to="/signup">Signup</Link>
         </div>
+        )}
       </div>
       <button onClick={toggleTheme}>Toggle</button>
     </nav>
